@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :gardens do
+  root to: 'gardens#index'
+  resources :gardens, except: [:index] do
     resources :plants, only: :create
   end
   resources :plants, only: :destroy
